@@ -156,7 +156,7 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 gene-2.bed
 1	6234229	6234399	GENE00000025907
 1	6238262	6238384	GENE00000025907
 1	6239952	6240378	GENE00000025907
-
+```
 
 ## Ejercicio 2
 
