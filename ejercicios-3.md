@@ -18,12 +18,6 @@ Trata ahora de ordenar este fichero de acuerdo a los siguientes criterios:
 
 ### Respuesta ejercicio 1
 
-## Ejercicio 2
-
-Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanogaster.BDGP6.28.102.gtf` y en `Homo_sapiens.GRCh38.102.gtf.gz`? Nota: para trabajar con ficheros .gunzip sin descomprimir puedes usar `zcat`.
-
-### Respuesta ejercicio 2
-
 Examinando el archivo gene-2,bed con  nano tiene este aspecto
 
 ```
@@ -162,6 +156,14 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 gene-2.bed
 1	6234229	6234399	GENE00000025907
 1	6238262	6238384	GENE00000025907
 1	6239952	6240378	GENE00000025907
+
+
+## Ejercicio 2
+
+Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanogaster.BDGP6.28.102.gtf` y en `Homo_sapiens.GRCh38.102.gtf.gz`? Nota: para trabajar con ficheros .gunzip sin descomprimir puedes usar `zcat`.
+
+### Respuesta ejercicio 2
+
 
 
 ## Ejercicio 3
