@@ -163,8 +163,23 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 gene-2.bed
 Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanogaster.BDGP6.28.102.gtf` y en `Homo_sapiens.GRCh38.102.gtf.gz`? Nota: para trabajar con ficheros .gunzip sin descomprimir puedes usar `zcat`.
 
 ### Respuesta ejercicio 2
-
-
+ Para el archivo Drosophila_melanogaster.BDGP6.28.102.gtf
+ 
+```
+nguerrero@cpg3:~$ cut -f 3 /home/nguerrero/gtfs/Drosophila_melanogaster.BDGP6.28.102.gtf | sort | uniq -c
+      1 #!genome-build BDGP6.28
+      1 #!genome-build-accession GCA_000001215.4
+      1 #!genome-version BDGP6.28
+ 161508 CDS
+      4 Selenocysteine
+ 188169 exon
+  46462 five_prime_utr
+  17807 gene
+  30595 start_codon
+  30590 stop_codon
+  33453 three_prime_utr
+  34920 transcript
+```
 
 ## Ejercicio 3
 
