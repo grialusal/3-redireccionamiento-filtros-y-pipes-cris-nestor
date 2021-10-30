@@ -74,8 +74,8 @@ desordenado.bed  gene-1.bed  gene-2.bed
 1       6238262 6238384 GENE00000025907
 1       6223599 6223745 GENE00000025907
 ```
-
-Los ordeno de nuevo  y se ordena em orden ascendente segun los valores de la segunda columna
+1. Sin cortar los elementos
+Los ordeno de nuevo  y se ordena en orden ascendente segun los valores de la segunda columna
 
 ```
 nguerrero@nguerrero-VirtualBox:~/genes$ sort < desordenado.bed > desord1
@@ -106,7 +106,7 @@ nguerrero@nguerrero-VirtualBox:~/genes$ nano desord1
 1       6238262 6238384 GENE00000025907
 1       6239952 6240378 GENE00000025907
 ```
-
+2. En orden descendente
 Y para ordenarlos en orden descendente usamos la funciones reverse r- del manual y aparecen ordenados en orden decreciente según la segunda columna
 
 ```
@@ -131,10 +131,10 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -r gene-2.bed
 1	6206227	6206270	GENE00000025907
 1	6206197	6206270	GENE00000025907
 ```
-
+3. Usando a la vez la tercera y la segunda columna (en este orden de prioridad).
   Para ordenarlos según la tercera columna usamos el comando sort -k
 leyendo el manual, dice que se pueden ordenar dependiendo de una `key` que interpreto como una clave, como clave en bases de datos y explica que debemos introducir un numero `n` según el `field`, que leyendo el ejercicio interpreto como columna, al poner entonces `-k3` se ordenan según
-la tercera columna en orden creciente.
+la tercera columna en orden creciente. Y los datos de la segunda columna aparecen también ordenados en orden creciente debido a la propia naturaleza de los datos. Parece que también aumentan progresivamente al igual que los datos de la columna 3.
 ```
 nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 gene-2.bed 
 1	6206197	6206270	GENE00000025907
