@@ -177,6 +177,20 @@ nguerrero@cpg3:~$ cut -f 3 /home/nguerrero/gtfs/Drosophila_melanogaster.BDGP6.28
   33453 three_prime_utr
   34920 transcript
 ```
+Para el archivo Homo_sapiens.GRCh38.102.gtf.gz, uso el mismo pipeline colocando zcat al principio. Y me aparece el resultado, pero el cursor está a la espera de algo con ejecuto el pipeline, pero funciona cuando lo cierre con CTRL+ D, me imagino que se debe al funcionamiento zcat
+```
+nguerrero@cpg3:~/gtfs$ zcat Homo_sapiens.GRCh38.102.gtf.gz | cut -f3 | sort | grep -v "^#" | uniq -c
+# Debo pulsar CTRL + D
+ 789946 CDS
+    117 Selenocysteine
+1429266 exon
+ 157872 five_prime_utr
+  60675 gene
+  90054 start_codon
+  82918 stop_codon
+ 167723 three_prime_utr
+ 232024 transcript
+ ```
 
 ## Ejercicio 3
 
