@@ -166,10 +166,7 @@ Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanoga
  Para el archivo Drosophila_melanogaster.BDGP6.28.102.gtf
  
 ```
-nguerrero@cpg3:~$ cut -f 3 /home/nguerrero/gtfs/Drosophila_melanogaster.BDGP6.28.102.gtf | sort | uniq -c
-      1 #!genome-build BDGP6.28
-      1 #!genome-build-accession GCA_000001215.4
-      1 #!genome-version BDGP6.28
+nguerrero@cpg3:~$ cut -f 3 /home/nguerrero/gtfs/Drosophila_melanogaster.BDGP6.28.102.gtf | sort | grep -v "^#" | uniq -c
  161508 CDS
       4 Selenocysteine
  188169 exon
