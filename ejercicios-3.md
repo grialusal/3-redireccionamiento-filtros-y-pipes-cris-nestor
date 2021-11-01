@@ -198,6 +198,13 @@ Recuerdas `covid-samples.fasta`? Localízalo en tu HOME, y extrae, usando un pip
 
 ### Respuesta ejercicio 3
 
+Primero buscamos el archivo:
+
+```
+ccalvo@cpg3:/home$ find /home -name "covid-samples.fasta" 2> /dev/null
+/home/gtfs/covid-samples.fasta
+```
+
 
 ## Ejercicio 4
 
