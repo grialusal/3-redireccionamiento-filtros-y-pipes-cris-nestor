@@ -133,14 +133,28 @@ Recuerdas `covid-samples.fasta`? Localízalo en tu HOME, y extrae, usando un pip
 
 ### Respuesta ejercicio 3
 
-Primero buscamos el archivo:
+Primero buscamos el archivo, para tener la ruta del archivo
 
 ```
 ccalvo@cpg3:/home$ find /home -name "covid-samples.fasta" 2> /dev/null
 /home/gtfs/covid-samples.fasta
 ```
+Se trata de un archivo fasta, estos tipo de formate tiene una primera línea que comienza por '>' que es el encabezado con el nombre y otras informaciones sobre la secuencia y después de un ENTER aparece la secuencia, como vamos a trabajar con los encabezados en este ejercicios examinemos uno a modo de ejemplo para conocer la estructura (copiado de nano):
 
+```
+>MW186669.1 |Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/EGY/Cairo-sample 19 MOH/2020, complete genome
+```
+Observamos que comienza por una valor que consta de dos letras seguido de un número con un decimal y tras él un espacio y la misma barra que usamos para crear el pipeline. Parece que eso puede ser un nombre o clave primaria de una base de datos. Y aparecería separado del resto de información del encabezado por "|".
 
+Creo un pipeline comenzando con el comando 'grep' que va a tomar sólo las líneas del encabezado (que comienzan por > ) gracias a que le adicionamos "^>". El resultado de eso le diremos que extraiga con el comando 'cut' el primer campo '-f1', estando los campos separados por"|", lo que nos deja sólo con las claves de los nombres y por último le pedimos que nos lo ordene y guardé en un archivo, que visualizamos con 'more' para verificar.
+```
+nguerrero@cpg3:~$ grep "^>" /home/gtfs/covid-samples.fasta |cut -f1 -d "|" | sort > covid-seq-names.txt
+nguerrero@cpg3:~$ more covid-seq-names.txt 
+>MW181431.1 
+>MW186669.1 
+>MW186829.1 
+>MW186830.1 
+```
 ## Ejercicio 4
 
 Encuentra, usando una sola línea, el número de usuarias diferentes que tienen al menos una carpeta a su nombre en el '/home' de CPG3.
