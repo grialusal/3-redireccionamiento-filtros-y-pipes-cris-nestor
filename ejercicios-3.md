@@ -161,7 +161,14 @@ Encuentra, usando una sola línea, el número de usuarias diferentes que tienen 
 
 ### Respuesta ejercicio 4
 
+Usó el siguente pipeline que me da el valor de 35:
+```
+nguerrero@cpg3:/home$ ls -l | sort | grep  -v "^total"  | cut -c 15-33 | uniq | wc -l
+35
+```
+Primero le pedimos que nos muestre el contenido del directorio home en formato lista **ls -l |** , después que lo ordene para poder usar el comando para mostrar una sola copia ' uniq -c' **sort |**, como Ls -l nos da el número total de elementos en una línea adicional lo contaría como un usuario adicional en  la cuenta, por lo que lo eliminamos con el comando 'grep'  **grep  -v "^total"  |**, y ahora tomamos de cada fila los caracteres que van desde las posiciones 15 a la 33 que coincide con los nombres de usuario **cut -c 15-33 |**, le decimos que muestre sólo una línea y elimine posibles copias **uniq |** y que cuente el número de líneas **wc -l**
 
+.# Esta linea tiene la desventaja de que si se adicionan varios nuevos usuarios con más 19 de caracteres con los finales diferentes, al cortar del modo que lo hice los interpretaría como la misma línea y tendríamos un resultado final de la cuenta erróneo.
 
 
 
