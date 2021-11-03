@@ -98,7 +98,7 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 -r gene-2-desordenado.bed
 Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanogaster.BDGP6.28.102.gtf` y en `Homo_sapiens.GRCh38.102.gtf.gz`? Nota: para trabajar con ficheros .gunzip sin descomprimir puedes usar `zcat`.
 
 ### Respuesta ejercicio 2
- Para el archivo Drosophila_melanogaster.BDGP6.28.102.gtf
+ Para el archivo Drosophila_melanogaster.BDGP6.28.102.gtf, generamos el siguiente pipelina: primero cortamos para tomar la información del tercer campo, que en este caso es la tercera columna con la orden 'cut -f3' luego lo ordenamos con el comando 'sort' porque el comando 'uniq' trabaja sobre archivos ordenados.  Tras ordenarlo usamos el comando grep que filtra (retirando, gracias al flag '-v') las líneas que empiezan con '#' y son parte del encabezamiento y no hay features en el encabezamiento. Y por último usamos el comando 'uniq' que nos dará sólo una copia por de cada uno de los valores de la columna, y uso el flag -c para que me diga el número de copias.
  
 ```
 nguerrero@cpg3:~$ cut -f 3 /home/nguerrero/gtfs/Drosophila_melanogaster.BDGP6.28.102.gtf | sort | grep -v "^#" | uniq -c
