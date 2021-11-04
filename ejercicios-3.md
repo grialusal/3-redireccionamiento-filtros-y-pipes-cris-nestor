@@ -93,6 +93,9 @@ nguerrero@nguerrero-VirtualBox:~/genes$ sort -k3 -r gene-2-desordenado.bed
 1  6206197  6206270  GENE00000025907
 ```
 
+### Comentario: Simplemente faltaría añadir `,3n` a `-k3` para que ordene numéricamente los datos, además faltaría añadir -k2,2n para que ordene los datos en primer lugar teniendo en cuenta primero la segunda columna y en caso de empate teniendo en cuenta el orden de la tercera columna, la opción correcta sería: `sort -k3,3n -k2,2n -r`. Por lo demás todo perfecto, muy bien :)
+### Nota: 2.3/2.5
+
 ## Ejercicio 2
 
 Cuáles son y cuántos tipos distintos de "features" hay en `Drosophila_melanogaster.BDGP6.28.102.gtf` y en `Homo_sapiens.GRCh38.102.gtf.gz`? Nota: para trabajar con ficheros .gunzip sin descomprimir puedes usar `zcat`.
@@ -126,6 +129,9 @@ nguerrero@cpg3:~/gtfs$ zcat Homo_sapiens.GRCh38.102.gtf.gz | cut -f3 | sort | gr
  167723 three_prime_utr
  232024 transcript
  ```
+ 
+### Comentario: simplemente faltaría emplear `wc -l` para que cuente las líneas y nos muestre el número de freatures diferentes que hay en cada archivo. Por lo demás todo correcto, muy bien :)
+### Nota: 2.4/2.5
 
 ## Ejercicio 3
 
@@ -155,6 +161,10 @@ nguerrero@cpg3:~$ more covid-seq-names.txt
 >MW186829.1 
 >MW186830.1 
 ```
+
+### Comentario: simplemente añadir que os ha faltado sacar toda la línea que empieza por > ya que ese es el nombre de la secuencia, sin embargo en la solución pusisteis que si solo ponemos `grep ">"` nos saca toda la línea, a sí que todo correcto, muy bien :)
+### Nota: 2.5/2.5
+
 ## Ejercicio 4
 
 Encuentra, usando una sola línea, el número de usuarias diferentes que tienen al menos una carpeta a su nombre en el '/home' de CPG3.
@@ -170,5 +180,7 @@ Primero le pedimos que nos muestre el contenido del directorio home en formato l
 
 .# Esta linea tiene la desventaja de que si se adicionan varios nuevos usuarios con más 19 de caracteres con los finales diferentes, al cortar del modo que lo hice los interpretaría como la misma línea y tendríamos un resultado final de la cuenta erróneo.
 
+### Comentario: Todo correcto, muy bien :)
+### Nota: 2.5/2.5
 
-
+### Nota total: 9.7
